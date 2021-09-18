@@ -35,7 +35,7 @@ function App() {
     <div className="main_div">
       <div className="center_div">
         <br />
-        <h1 class="title"> TO DO List</h1>
+        <h1 class="title"> TO-DO List</h1>
         <br></br>
         <input type="text" 
         className="text-box"
