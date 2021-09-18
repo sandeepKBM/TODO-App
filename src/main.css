@@ -1,0 +1,47 @@
+.main_div
+{
+    /* text-align: center; */
+    margin-top: 40px;
+    
+}
+body{
+    background-color:rgba(0, 0, 255, 0.486);
+}
+.button-submit:hover{
+    background-color: greenyellow;
+}
+.center_div
+{
+    text-align: center;
+    border: 2px solid blue;
+    margin-left: 450px;
+    margin-right: 450px;
+    min-height: 350px;
+    background-color: white;
+}
+.list
+{
+    list-style-type:none;
+}
+.title{
+    text-decoration: underline;
+}
+.div-list{
+    float:left;
+    text-align: left;
+}
+.text-box{
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    margin-right: 20px;
+}
+.wrong{
+    margin-right: 15px;
+}
+.wrong:hover{
+    background-color: red;
+}
+.wrong{
+    text-transform: capitalize;
+}
