@@ -18,16 +18,18 @@ function App() {
         return [...oldItems];
       }
       else{
-        return [...oldItems,inputList];
+        return [...oldItems,[inputList,Math.floor(Math.random() * 10000000) + 1]];
       }
     })
+    console.log(Items);
     setInputList("");
   }
   const deleteItems=(id)=>{
+    console.log(Items);
     setItems((oldItems)=>{
-      return oldItems.filter((arrElem,index)=>
+      return oldItems.filter((index)=>
       {
-        return index!==id;
+        return index[1]!==id;
       })
     })
 }
@@ -35,7 +37,7 @@ function App() {
     <div className="main_div">
       <div className="center_div">
         <br />
-        <h1 class="title"> TO-DO List</h1>
+        <h1 className="title"> TO-DO List</h1>
         <br></br>
         <input type="text" 
         className="text-box"
@@ -52,8 +54,8 @@ function App() {
               Items.map((itemval,index)=>{
                 return <li><ToDoLists
                 key={index} 
-                id={index} 
-                Items={itemval}
+                id={itemval[1]} 
+                Items={itemval[0]}
                 onSelect={deleteItems}
                 >
                   </ToDoLists></li>;

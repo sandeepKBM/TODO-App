@@ -2,7 +2,6 @@ import React from 'react';
 import './main.css';
 const ToDoLists=(props)=>
 {
-    
     return (
         <div>
             <div className="wrong1">
