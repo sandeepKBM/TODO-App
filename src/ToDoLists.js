@@ -7,7 +7,7 @@ const ToDoLists=(props)=>
         <div>
             <div className="wrong1">
             <button className="wrong">
-            <i class="far fa-times-circle" 
+            <i className="far fa-times-circle" 
             onClick={()=>{
                 props.onSelect(props.id);
             }}>
