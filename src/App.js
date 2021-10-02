@@ -5,7 +5,7 @@ import ToDoLists from './ToDoLists';
 function App() {
 
   const[inputList, setInputList]= useState("");
-  const[Items,setItems]=useState([]);
+  const[Items,setItems]=useState([]);//Array Items[Index 0-Text and Index 1-Rnadom number{ID}]
 
   const itemEvent=(event)=>{
     setInputList(event.target.value);
@@ -18,7 +18,7 @@ function App() {
         return [...oldItems];
       }
       else{
-        return [...oldItems,[inputList,Math.floor(Math.random() * 10000000) + 1]];
+        return [...oldItems,[inputList,Math.floor(Math.random() * 10000000) + 1]];//Text and id puahed to array
       }
     })
     console.log(Items);
@@ -29,7 +29,7 @@ function App() {
     setItems((oldItems)=>{
       return oldItems.filter((index)=>
       {
-        return index[1]!==id;
+        return index[1]!==id;//Text is deleted
       })
     })
 }
