@@ -1,7 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import './App.css';
 import './main.css';
 import ToDoLists from './ToDoLists';
+
+const baseURL = "http://localhost:8080/staerter/mvc";
+
 function App() {
 
   const[inputList, setInputList]= useState("");
@@ -15,13 +19,24 @@ function App() {
       if(inputList==="")
       {
         alert("Please enter");
+        console.log(oldItems + "vals")
         return [...oldItems];
       }
-      else{
-        return [...oldItems,[inputList,Math.floor(Math.random() * 10000000) + 1]];//Text and id puahed to array
+      else {
+        const randm = Math.floor(Math.random() * 10000000) + 1
+        console.log(inputList + " " + randm)
+        console.log(typeof (randm))
+        let postdata = new URLSearchParams();
+        postdata.append("idNo", randm)
+        postdata.append("msg",inputList)
+        axios.post(baseURL + "/todoAdd",postdata).then((response) => {
+          console.log("Success")
+        });
+        return [...oldItems, [inputList,randm]]//Text and id puahed to array
+        
       }
     })
-    console.log(Items);
+    // console.log(Items);
     setInputList("");
   }
   const deleteItems=(id)=>{
